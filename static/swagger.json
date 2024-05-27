@@ -1,0 +1,66 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Simple Flask API",
+      "description": "API for a simple Flask application",
+      "version": "1.0.0"
+    },
+    "host": "localhost:8006",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/submit": {
+        "post": {
+          "summary": "Submit strings",
+          "description": "Accepts two strings and returns a message",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "JSON object containing two strings",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Log": {
+                    "type": "string"
+                  },
+                  "Count": {
+                    "type": "string"
+                  }
+                },
+                "required": ["Log", "Count"]
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Confirmation message",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error message",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

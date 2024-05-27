@@ -1,0 +1,7 @@
+Flask==3.0.3
+flask-cors
+flask-swagger-ui
+numpy==1.26.1
+pandas==2.1.1
+supervision==0.3.0
+ultralytics==8.0.196
