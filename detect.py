@@ -27,7 +27,7 @@ app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 # Load the YOLO face detection model
 model = YOLO(os.path.relpath("yolov8s.pt"))  # Ensure this model is suitable for face detection
-model.cuda()
+# model.cuda()
 model.fuse()
 
 # Global variables for the real-time frame and lock
@@ -119,3 +119,4 @@ threading.Thread(target=start_video_capture, daemon=True).start()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8006)
+
